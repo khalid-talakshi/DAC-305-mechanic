@@ -7,6 +7,13 @@ public class GameManager : MonoBehaviour
     private float nextActionTime = 0.0f;
     private float period = 1.0f;
 
+    public float secondsLeft = 30.0f;
+
+    public float getSecondsLeft()
+    {
+        return secondsLeft;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +27,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Timer has ticked");
             nextActionTime = Time.time + period;
+            secondsLeft -= 1.0f;
         }
     }
 }
